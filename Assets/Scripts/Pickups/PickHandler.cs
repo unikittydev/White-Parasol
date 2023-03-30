@@ -32,7 +32,7 @@ namespace Game
                 return;
             
             
-            var count = pickupTrigger.OverlapCollider(new ContactFilter2D { layerMask = pickupMask }, collidersInPickupZone);
+            var count = pickupTrigger.Overlap(new ContactFilter2D { layerMask = pickupMask }, collidersInPickupZone);
             if (count == 0)
                 return;
 

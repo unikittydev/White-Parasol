@@ -1,5 +1,6 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
@@ -14,6 +15,8 @@ namespace Game
         [Header("Characteristics")]
         [SerializeField] private float movementSpeed = 5f;
         [SerializeField] private float jumpHeight = 5f;
+
+        [SerializeField] private UnityEvent onJump;
         
         public float viewDirection { get; private set; } = 1f;
         public float move { get; private set; }
@@ -93,6 +96,7 @@ namespace Game
             
             Vector2 velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight));
             rb.velocity = velocity;
+            onJump?.Invoke();
         }
         
         private void ApplyOverridenVelocity()

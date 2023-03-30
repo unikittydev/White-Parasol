@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2891199164419796994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1054387785861467372, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: startColor.b
+      value: 0.48235297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054387785861467372, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: startColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1054387785861467372, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: startColor.r
+      value: 0.61960787
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983140157216241451, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -542139136, guid: 0732ea5ba97ea3d4b9994eaf965f89da, type: 3}
+    - target: {fileID: 1983140157216241451, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e5f06326984ef24d9215794e6197ef9, type: 2}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -84.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -42.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704013632567004846, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3723477587777823819, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 29b12dc36104738419af90af287ce1a8, type: 3}
+    - target: {fileID: 5711296253774966933, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: m_Name
+      value: Peridote Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910718022509349036, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}
+      propertyPath: pickedOffset.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a5dbcc4d0df8774b99a17c35eda6c91, type: 3}

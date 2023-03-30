@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Game
 {
@@ -13,6 +14,8 @@ namespace Game
 
         [SerializeField] private float respawnTimer;
         [SerializeField] private float despawnTimer;
+
+        [SerializeField] private UnityEvent onPlayerRespawn;
         
         private Checkpoint currentCheckpoint;
 
@@ -51,6 +54,7 @@ namespace Game
             player.GetComponent<Collider2D>().enabled = true;
             Transform respawnPoint = current ? current.transform : defaultRespawnPoint;
             player.transform.position = respawnPoint.position;
+            onPlayerRespawn?.Invoke();
         }
     }
 }
