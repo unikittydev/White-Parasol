@@ -121,23 +121,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4999957984284686309, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1546055672775566123}
+    - targetCorrespondingSourceObject: {fileID: 4999957984284686309, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9153225501169591043}
   m_SourcePrefab: {fileID: 100100000, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
 --- !u!4 &1660033409065866323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8714122698407730267, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
   m_PrefabInstance: {fileID: 8063510396086257672}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2048634856044103982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -898079484713238234, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
-  m_PrefabInstance: {fileID: 8063510396086257672}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3063640373538504685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da74714f011423346a0b399f9c3bd88b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3063640373538504685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4999957984284686309, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
@@ -191,6 +183,7 @@ MonoBehaviour:
     m_Bits: 1
   avoidRadius: 1
   rayStartPivot: {fileID: 8549142361414163743}
+  controller: {fileID: 6690504315913148800}
 --- !u!114 &2650007457660016509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,21 +284,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwVelocity: 5
   invinsibleTimer: 0.05
-  onHit:
+  _onHit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2048634856044103982}
-        m_TargetAssemblyTypeName: Game.Damageable, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  throwOnStart: 0
+--- !u!114 &-9153225501169591043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063640373538504685}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f0dafa57c7440fbdac0dbd73cba0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 6690504315913148800}
+  movement: {fileID: 3412943854282551852}
+  waypoints: []
+  waypointRadius: 0.5
+  idleTime: 0
+  ignoreHeight: 1
+  waypointsAreRandom: 1
+  onWaypointReached:
+    m_PersistentCalls:
+      m_Calls: []
+  onPatrolComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6690504315913148800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3692430258022945160, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}
+  m_PrefabInstance: {fileID: 8063510396086257672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063640373538504685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf321a523b6f99a4fa739d47af691331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8549142361414163743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1820562922572731671, guid: 2f5ab0e2ac5237e44bacfc442f3447b1, type: 3}

@@ -10,13 +10,22 @@ namespace Game
         [SerializeField] private float throwVelocity;
         [SerializeField] private float invinsibleTimer = .05f;
 
-        [SerializeField] private UnityEvent onHit;
+        [SerializeField] private UnityEvent _onHit;
+        public UnityEvent onHit => _onHit;
+        
+        [SerializeField] private bool throwOnStart;
         
         private PickHandler handler;
         
         private bool invinsible;
         
         private float viewDirection;
+
+        private void Start()
+        {
+            if (throwOnStart)
+                Throw();
+        }
 
         public void SetThrowDirection()
         {
@@ -42,9 +51,11 @@ namespace Game
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            // Ignore self hit
-            if (!handler || col.gameObject == handler.gameObject)
+            if (!throwOnStart && !handler)
                 return;
+            if (handler && col.gameObject == handler.gameObject)
+                return;
+            // Ignore self hit
             if (col.gameObject.TryGetComponent(out Damageable damageable))
             {
                 damageable.TakeDamage(1);

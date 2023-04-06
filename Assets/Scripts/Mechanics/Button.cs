@@ -33,11 +33,14 @@ namespace Game
         {
             if (col.isTrigger)
                 return;
+
+            var wasEnabled = _buttonEnabled;
+            
             pushers.Add(col);
             renderer.sprite = onSprite;
             _buttonEnabled = true;
             
-            if (enabled)
+            if (!wasEnabled && enabled)
                 onButtonEnable?.Invoke();
         }
 
@@ -45,13 +48,16 @@ namespace Game
         {
             if (col.isTrigger)
                 return;
+
+            var wasEnabled = _buttonEnabled;
+            
             pushers.Remove(col);
             if (pushers.Count > 0)
                 return;
             renderer.sprite = offSprite;
             _buttonEnabled = false;
             
-            if (enabled)
+            if (wasEnabled && enabled)
                 onButtonDisable?.Invoke();
         }
     }

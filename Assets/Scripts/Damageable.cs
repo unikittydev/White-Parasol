@@ -17,11 +17,15 @@ namespace Game
         
         [SerializeField] private LayerMask damageMask;
         
-        [SerializeField] private int maxHealth = 1;
-        [SerializeField] private int currentHealth = 1;
+        [SerializeField] private int _maxHealth = 1;
+        [SerializeField] private int _currentHealth = 1;
         [SerializeField] private float invinsibleTime = 2f;
 
+        public int maxHealth => _maxHealth;
+        public int currentHealth => _currentHealth;
+        
         [SerializeField] private float deathJumpHeight = 5f;
+        //[SerializeField] private bool destroyOnHealthZero;
         
         private float invinsibleCounter;
         private bool invinsible;
@@ -31,6 +35,8 @@ namespace Game
         [SerializeField] private UnityEvent onTakeDamage;
         [SerializeField] private UnityEvent onHealthZero;
 
+        public UnityEvent OnHealthZero => onHealthZero;
+        
         public bool CanTakeDamage(DamageSide hitSide) => damageSides.HasFlag(hitSide);
 
         private void Update()
@@ -48,7 +54,7 @@ namespace Game
 
         public void ResetHealth()
         {
-            currentHealth = maxHealth;
+            _currentHealth = maxHealth;
         }
         
         public void TakeDamage(int damage)
@@ -56,7 +62,7 @@ namespace Game
             if (invinsible)
                 return;
             
-            currentHealth -= damage;
+            _currentHealth -= damage;
 
             invinsible = true;
             rb.excludeLayers = damageMask;

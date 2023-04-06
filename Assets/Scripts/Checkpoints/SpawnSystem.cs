@@ -9,6 +9,7 @@ namespace Game
         private static SpawnSystem instance;
         
         [SerializeField] private PlayerController2D player;
+        [SerializeField] private Transform parasol;
 
         [SerializeField] private Transform defaultRespawnPoint;
 
@@ -54,6 +55,7 @@ namespace Game
             player.GetComponent<Collider2D>().enabled = true;
             Transform respawnPoint = current ? current.transform : defaultRespawnPoint;
             player.transform.position = respawnPoint.position;
+            parasol.position = player.transform.position;
             onPlayerRespawn?.Invoke();
         }
     }

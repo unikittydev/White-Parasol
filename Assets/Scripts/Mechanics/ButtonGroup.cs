@@ -7,7 +7,8 @@ namespace Game
     public enum ButtonGroupType
     {
         All,
-        Any
+        Any,
+        AllDisabled
     }
     
     public class ButtonGroup : MonoBehaviour
@@ -40,7 +41,9 @@ namespace Game
         {
             if (groupType == ButtonGroupType.All)
                 return buttons.All(button => button.buttonEnabled);
-            return buttons.Any(button => button.buttonEnabled);
+            if (groupType == ButtonGroupType.Any)
+                return buttons.Any(button => button.buttonEnabled);
+            return buttons.All(button => !button.buttonEnabled);
         }
     }
 }

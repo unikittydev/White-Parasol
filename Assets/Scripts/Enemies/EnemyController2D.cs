@@ -16,6 +16,8 @@ namespace Game
             }
         }
 
+        public Vector2 lookDirection { get; set; }
+        
         [SerializeField]
         private SpriteRenderer renderer;
 
@@ -28,11 +30,13 @@ namespace Game
 
         private void OnDisable()
         {
-            GetComponent<EnemyMovement>().enabled = false;
+            if (TryGetComponent(out EnemyMovement movement))
+                movement.enabled = false;
         }
 
         private void SetDirection(bool right)
         {
+            lookDirection = right ? Vector2.right : Vector2.left;
             renderer.flipX = !right;
         }
 

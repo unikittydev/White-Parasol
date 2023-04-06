@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,7 +13,7 @@ namespace Game
         [SerializeField] private KeyCode jumpCode = KeyCode.Space;
         [SerializeField] private KeyCode pickupCode = KeyCode.Return;
         [SerializeField] private KeyCode interactCode = KeyCode.E;
-        
+
         [Header("Characteristics")]
         [SerializeField] private float movementSpeed = 5f;
         [SerializeField] private float jumpHeight = 5f;
@@ -39,6 +41,13 @@ namespace Game
             _rb = GetComponent<Rigidbody2D>();
             gc = GetComponent<GroundChecker2D>();
             _pickHandler = GetComponent<PickHandler>();
+        }
+
+        private void OnDisable()
+        {
+            move = 0f;
+            jump = false;
+            rb.velocity = Vector2.zero;
         }
 
         private void Update()
@@ -93,12 +102,12 @@ namespace Game
             
             if (!gc.isGrounded)
                 return;
-            
+
             Vector2 velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight));
             rb.velocity = velocity;
             onJump?.Invoke();
         }
-        
+
         private void ApplyOverridenVelocity()
         {
             Vector2 velocity = rb.velocity;
